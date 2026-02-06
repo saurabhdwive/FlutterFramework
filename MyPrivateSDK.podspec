@@ -1,17 +1,29 @@
 Pod::Spec.new do |s|
-  s.name         = "MyPrivateSDK"
-  s.version      = "1.0.0"
-  s.summary      = "Internal SDK for company use"
-  s.homepage     = "https://github.com/your-org/MyPrivateSDK"
-  s.license      = { :type => "MIT" }
-  s.author       = { "YourOrg" => "dev@yourorg.com" }
-  s.platform     = :ios, "12.0"
+  s.name         = 'MyPrivateSDK'
+  s.version      = '1.0.1'
+  s.summary      = 'Internal Flutter based SDK'
+  s.description  = 'Private SDK wrapping Flutter engine and plugins'
+  s.homepage     = 'https://github.com/saurabhdwive/FlutterFramework'
+  s.license      = { :type => 'MIT' }
+  s.author       = { 'YourOrg' => 'dev@yourorg.com' }
 
-  s.source       = {
-    :git => "https://github.com/your-org/MyPrivateSDK.git",
-    :tag => s.version
+  s.platform     = :ios, '12.0'
+  s.swift_version = '5.0'
+
+  # ✅ HTTPS REQUIRED
+  s.source = {
+    :git => 'https://github.com/saurabhdwive/FlutterFramework.git',
+    :tag => s.version.to_s
   }
-  s.vendored_frameworks = 'Frameworks/*.xcframework'
 
-  s.source_files = "Sources/**/*.{swift,h,m}"
+  # ✅ REQUIRED FOR FLUTTER
+  s.static_framework = true
+
+  # ✅ XCFrameworks (Flutter, App, Plugins, FFmpeg, etc.)
+  s.vendored_frameworks = [
+    'Frameworks/*.xcframework'
+  ]
+
+  # ❌ DO NOT EXCLUDE ARCHS
+  # ❌ DO NOT USE source_files
 end
