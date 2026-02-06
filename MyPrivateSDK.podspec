@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'MyPrivateSDK'
-  s.version      = '1.0.7'
+  s.version      = '1.0.8'
   s.summary      = 'Internal Flutter based SDK'
   s.description  = 'Private SDK wrapping Flutter engine and plugins'
   s.homepage     = 'https://github.com/saurabhdwive/FlutterFramework'
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
     'Frameworks/*.xcframework'
   ]
   s.source_files = 'MyPrivateSDK/**/*.{swift,h,m}'
-  s.pod_target_xcconfig = { 'SWIFT_OBJC_BRIDGING_HEADER' => 'MyPrivateSDK/Bridging-Header.h' }
+ # s.pod_target_xcconfig = { 'SWIFT_OBJC_BRIDGING_HEADER' => 'MyPrivateSDK/Bridging-Header.h' }
 
 
   # ❌ DO NOT EXCLUDE ARCHS
